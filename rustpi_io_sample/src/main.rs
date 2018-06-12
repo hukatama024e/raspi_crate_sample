@@ -13,22 +13,22 @@ const GPIO_PIN_NUM : u8 = 24;
 const BLINK_CNT : u8 = 10;
 
 fn main() {
-    let gpio = GPIO::new( GPIO_PIN_NUM, GPIOMode::Write ).expect( "Failed GPIO::new()" );
+    let gpio = GPIO::new( GPIO_PIN_NUM, GPIOMode::Write ).expect( "Failed GPIO::new" );
     let mut blinking_cnt = 0;
     
     // Toggle GPIO pinfor blinking an LED
     while blinking_cnt < BLINK_CNT {
-        gpio.set( GPIOData::High ).expect( "Failed GPIO.set()" );
+        gpio.set( GPIOData::High ).expect( "Failed GPIO.set" );
         thread::sleep( Duration::from_secs( 1 ) );
 
-        gpio.set( GPIOData::Low ).expect( "Failed GPIO.set()" );
+        gpio.set( GPIOData::Low ).expect( "Failed GPIO.set" );
         thread::sleep( Duration::from_secs( 1 ) );
         blinking_cnt = blinking_cnt + 1;
     }
 
     // SPI setting
     let mut spi = SerialPi::new( Device::CE0, Speed::Mhz62_5, SpiMode::Mode0, ComMode::FullDuplex )
-                    .expect( "Failed SerialPi::new()" );
+                    .expect( "Failed SerialPi::new" );
 
     // Write SPI data
     let mut write_data = vec![0x12, 0x34, 0x56, 0x78, 0x9A, 0xBC, 0xDE, 0xF0];

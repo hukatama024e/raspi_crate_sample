@@ -13,7 +13,7 @@ const GPIO_PIN_NUM : u8 = 24;
 const BLINK_CNT : u8 = 10;
 
 fn main() {
-    let mut gpio = Gpio::new().expect( "Failed Gpio::new()" );
+    let mut gpio = Gpio::new().expect( "Failed Gpio::new" );
     let mut blinking_cnt = 0;
 
     // Change GPIO mode to output
