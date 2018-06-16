@@ -4,4 +4,4 @@ version = "0.1.0"
 authors = ["hukatama024e"]
 
 [dependencies]
-rustpi_io = "0.1.0"
+rustpi_io = "^0.1"

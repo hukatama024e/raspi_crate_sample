@@ -4,4 +4,4 @@ version = "0.1.0"
 authors = ["hukatama024e"]
 
 [dependencies]
-wiringpi = "0.2"
+wiringpi = "^0.2"
