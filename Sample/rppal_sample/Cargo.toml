@@ -4,4 +4,4 @@ version = "0.1.0"
 authors = ["hukatama024e"]
 
 [dependencies]
-rppal = "^0.6"
+rppal = "^0.7"
