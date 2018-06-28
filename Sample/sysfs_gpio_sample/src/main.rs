@@ -3,6 +3,7 @@ extern crate sysfs_gpio;
 use std::thread;
 use std::time::Duration;
 use sysfs_gpio::Pin;
+use sysfs_gpio::Direction;
 
 // GPIO BCM pin number
 const GPIO_PIN_NUM : u64 = 24;
@@ -20,6 +21,9 @@ fn main() {
     let mut blinking_cnt = 0;
 
     pin.with_exported( || {
+        
+        // Change GPIO mode to output
+        pin.set_direction( Direction::Out ).expect( "Failed Pin::set_direction" );
 
         // Toggle GPIO pinfor blinking an LED
         while blinking_cnt < BLINK_CNT {
@@ -30,6 +34,9 @@ fn main() {
             thread::sleep( Duration::from_secs( 1 ) );
             blinking_cnt = blinking_cnt + 1;
         }
+        
+        // Return GPIO mode to input
+        pin.set_direction( Direction::In ).expect( "Failed Pin::set_direction" );
 
         Ok( () )
     } ).expect( "Failed Pin::with_exported" );
