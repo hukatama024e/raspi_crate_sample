@@ -21,6 +21,7 @@ Supported functions in each crate listed following table.
 |:----:|:----:|:----:|:----:|:----:|
 | GPIO | 〇 | △ | △ | 〇 |
 | SPI | 〇 | 〇 | - | - |
+  
 〇: Supported and the function don't need root permission.  
 △: Supported but the function need root permission.  
 -: Not supported.
