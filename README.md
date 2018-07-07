@@ -5,7 +5,8 @@ Sample correction for crate(Rust library) to control Raspberry Pi
 
 ## Enable SPI
 SPI is disabled when Raspberry pi is in default configration.  
-For enabling SPI, you need run `raspi-config` or add `dtparam=spi=on` to `boot/config.txt` in root permission.
+For enabling SPI, you need run `raspi-config` or add `dtparam=spi=on` to `/boot/config.txt` in root permission, and reboot.
+
 
 ## Circuit for samples
 The Following figure indicate circuit for crate samples.
