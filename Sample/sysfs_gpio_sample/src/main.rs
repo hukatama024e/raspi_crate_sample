@@ -25,7 +25,7 @@ fn main() {
         // Change GPIO mode to output
         pin.set_direction( Direction::Out ).expect( "Failed Pin::set_direction" );
 
-        // Toggle GPIO pinfor blinking an LED
+        // Toggle GPIO pin for blinking an LED
         while blinking_cnt < BLINK_CNT {
             pin.set_value( LOW ).expect( "Failed Pin::set_value" );
             thread::sleep( Duration::from_secs( 1 ) );

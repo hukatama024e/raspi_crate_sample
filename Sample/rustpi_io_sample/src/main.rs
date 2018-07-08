@@ -16,7 +16,7 @@ fn main() {
     let gpio = GPIO::new( GPIO_PIN_NUM, GPIOMode::Write ).expect( "Failed GPIO::new" );
     let mut blinking_cnt = 0;
     
-    // Toggle GPIO pinfor blinking an LED
+    // Toggle GPIO pin for blinking an LED
     while blinking_cnt < BLINK_CNT {
         gpio.set( GPIOData::High ).expect( "Failed GPIO.set" );
         thread::sleep( Duration::from_secs( 1 ) );

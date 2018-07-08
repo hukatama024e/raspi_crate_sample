@@ -19,7 +19,7 @@ fn main() {
     // Change GPIO mode to output
     gpio.set_mode( GPIO_PIN_NUM, gpio::Mode::Output );
 
-    // Toggle GPIO pinfor blinking an LED
+    // Toggle GPIO pin for blinking an LED
     while blinking_cnt < BLINK_CNT {
         gpio.write( GPIO_PIN_NUM, Level::High );
         thread::sleep( Duration::from_secs( 1 ) );
